@@ -2,7 +2,7 @@
  * Zadatak 10.c
  *
  * Created: 11.5.2020. 18:31:05
- * Author : Josip Prpi? 4.H
+ * Author : Josip Prpić 4.H
  */ 
 
 #define F_CPU 16000000UL
@@ -20,8 +20,8 @@ void USART_putstring(char* StringPtr);
 int led_state=0;
 int main(void){
 	DDRD |= 0b00000100;  //pinMode(2, OUTPUT);
-	DDRD &= 0b01111111;  //pinMode(7, INPUT_PULLUP), Postavljanje registra DDR u 0 za      pin 7;
-	PORTD |= 0b11000000; // Postavljanje registra PORTD u 1 za pin 7
+	DDRD &= 0b01111111;  //pinMode(7, INPUT_PULLUP), Postavljanje registra DDR u 0 zapin 7;
+	PORTD |= 0b11000000; //Postavljanje registra PORTD u 1 za pin 7
 	USART_init();
 	while(1){
 		if ((PIND & 0b10000000) >> 7 == 0){
@@ -32,7 +32,7 @@ int main(void){
 			if ((PIND & 0b10000000) >> 7 == 0)
 			{
 				PORTD &= 0b01111111;
-				led_state=0; //ako je varijabla led_state u 0, zna?i da je LED dioda uga�ena
+				led_state=0; //ako je varijabla led_state u 0, znači da je LED dioda ugašena
 			}
 		}
 	}
